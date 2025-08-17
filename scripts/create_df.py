@@ -26,11 +26,11 @@ def create_df(user,password,DB,host='localhost'):
         print("DataFrames created successfully")
         
     except SQLAlchemyError as e:
-        logger.error(f"Error while connecting to the DataBase {e}")
-        print(f"Database error, check logs")
+        logger.error(f"Error while creating DataFrames {e}")
+        print(f"Database error in create_df, check logs")
         return None,None,None
 
     except Exception as e:
-        logger.error("Error while creating DataFrames", e )
-        print("Error,check logs")
+        logger.error("Error while connecting to the DataBase ", e )
+        print("Error in create_df,check logs")
         return None, None, None

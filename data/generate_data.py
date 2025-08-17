@@ -4,6 +4,7 @@ import random
 from faker import Faker
 from sqlalchemy import create_engine
 from datetime import datetime, timedelta
+from logs.logger_config import logger
 
 fake = Faker()
 
@@ -90,5 +91,5 @@ df_orders.to_sql("orders", con=engine, if_exists="replace", index=False)
 df_customers.to_sql("customers", con=engine, if_exists="replace", index=False)
 df_products.to_sql("products", con=engine, if_exists="replace", index=False)
 
-
-print("Synthetic data with outliers & missing values inserted into MySQL.")
+logger.info("data inserted into MySQL")
+print("Synthetic data inserted into MySQL.")

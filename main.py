@@ -12,7 +12,7 @@ def main():
     try:
         clean_data(**DB_CONFIG)
         customers_df,orders_df,products_df = create_df(**DB_CONFIG)
-        run_notebook()            
+        # run_notebook()           
         
 
         logger.info("Workflow completed successfully")
@@ -22,5 +22,7 @@ def main():
         print("An error occurred in the main script, check logs for details.")
     
 
-# if __name__ =="__main__":
-#     main()
+
+
+if __name__ =="__main__":
+    main()

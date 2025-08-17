@@ -26,11 +26,11 @@ def clean_data(user,password,DB,host="localhost"):
         except SQLAlchemyError as e:
             conn.rollback()
             logger.error(f"Error during data cleaning: {e}")
-            print(f"Error occured,check logs")
+            print(f"Error occured in data_cleaning,check logs")
 
     except SQLAlchemyError as e:
         logger.error(f"Error connecting to MySQL server,{e}")
-        print("Couldn't connect to the MySQL server,check logs")
+        print("Couldn't connect to the MySQL server in data_cleaning,check logs")
 
 
 
